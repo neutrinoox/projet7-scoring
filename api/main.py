@@ -16,9 +16,6 @@ print(f" Fichiers dans MODEL_DIR: {os.listdir(MODEL_DIR) if os.path.exists(MODEL
 
 # Charge les modèles
 with open(f'{MODEL_DIR}/lgbm_model.pkl', 'rb') as f:
-
-# Charge les modèles
-with open(f'{MODEL_DIR}/lgbm_model.pkl', 'rb') as f:
     model = pickle.load(f)
 with open(f'{MODEL_DIR}/imputer.pkl', 'rb') as f:
     imputer = pickle.load(f)
