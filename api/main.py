@@ -68,22 +68,3 @@ def predict(client: ClientFeatures):
         )
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
-
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", "8000"))
-    
-    print("\n" + "=" * 70)
-    print(" CREDIT SCORING API")
-    print("=" * 70)
-    print(f" URL: http://0.0.0.0:{port}")
-    print(f"Docs: http://0.0.0.0:{port}/docs")
-    print(f' Threshold: {THRESHOLD}")
-    print("=" * 70 + "\n")
-    
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=port,
-        reload=True,
-        log_level="info"
-    )
