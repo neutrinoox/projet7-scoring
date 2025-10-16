@@ -9,7 +9,13 @@ import os
 
 app = FastAPI(title="Credit Scoring API", version="1.0.0")
 
-MODEL_DIR = os.getenv("MODEL_DIR", "./models")
+MODEL_DIR = os.getenv("MODEL_DIR", "../models")
+
+print(f" MODEL_DIR: {MODEL_DIR}")
+print(f" Fichiers dans MODEL_DIR: {os.listdir(MODEL_DIR) if os.path.exists(MODEL_DIR) else 'N/A'}")
+
+# Charge les modèles
+with open(f'{MODEL_DIR}/lgbm_model.pkl', 'rb') as f:
 
 # Charge les modèles
 with open(f'{MODEL_DIR}/lgbm_model.pkl', 'rb') as f:
